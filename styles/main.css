@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 100vh;
+  border: 10px solid goldenrod;
+}
+
+.nav {
+  border: 10px solid salmon;
+  display: flex;
+  align-items: baseline;
+}
+
+.nav h1 {
+  font-size: 96px;
+  flex-grow: 10;
+}
+
+.nav ul {
+  display: flex;
+  text-align: center;
+}
+
+.nav li {
+  padding: 12px;
+  font-size: 60px;
+  flex: 1 1 auto;
+}
+
+.nav li > form {
+  align-items: center;
+  width: 100%;
+}
+
+.nav li > form label {
+  font-size: 32px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login > * {
+  display: flex;
+  flex-direction: column;
+}
