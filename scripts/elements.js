@@ -8,6 +8,7 @@ const elements = {
   player: document.getElementById("video"),
   uploadForm: document.getElementById("upload-form"),
   storedVideos: JSON.parse(localStorage.getItem("videos")) || [],
+  libraryList: document.getElementById("library-list")
 };
 
 export default elements;

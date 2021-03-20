@@ -151,6 +151,11 @@
             <input id="upload-submit" type="submit" />
           </form>
           <!-- / Upload Form End -->
+
+          <div class="break">
+            <hr />
+          </div>
+
           <!-- Current Video Information Start -->
           <div id="current-video" class="current-video">
             <h4>Playing:</h4>
@@ -166,8 +171,16 @@
       <!-- / Main End -->
       <!-- Video Library Start -->
       <div id="library" class="library">
-        <h4>Uploaded Videos</h4>
-        <ul id="library-list" class="library-list"></ul>
+        <div id="library-header" class="library-header">
+          <h4>Uploaded Videos</h4>
+          <p>
+            Note: To save videos for viewing repeatedly, visitors can make an
+            account.
+          </p>
+        </div>
+        <ul id="library-list" class="library-list">
+          <li>No videos yet uploading</li>
+        </ul>
       </div>
       <!-- / Video Library End -->
     </div>
