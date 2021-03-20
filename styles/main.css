@@ -92,8 +92,33 @@
   max-width: 40vh;
   min-width: 20vh;
   text-align: center;
+  display: block;
 }
 
 .upload > h4 {
   font-size: 32px;
+  padding-bottom: 12px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 30%;
+}
+
+.upload-form > * {
+  width: 80%;
+  align-content: center;
+}
+
+.current-video {
+  padding-top: 20px;
+  text-align: left;
+  position: relative;
+}
+
+.library {
+  border: 10px orange solid;
 }
