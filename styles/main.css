@@ -6,6 +6,12 @@
   overflow: hidden;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 .wrapper {
   height: 100vh;
   border: 10px solid goldenrod;
@@ -76,4 +82,18 @@
 .main {
   border: royalblue solid 10px;
   display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.upload {
+  border: lightsalmon solid 10px;
+  flex: 1;
+  max-width: 40vh;
+  min-width: 20vh;
+  text-align: center;
+}
+
+.upload > h4 {
+  font-size: 32px;
 }
