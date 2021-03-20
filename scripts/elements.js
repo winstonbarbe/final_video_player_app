@@ -4,7 +4,8 @@ const elements = {
   signupForm: document.getElementById("signup-form"),
   loginForm: document.getElementById("login-form"),
   navElementForms: document.querySelectorAll(".nav-element-form"),
-  logout: document.getElementById("logout")
+  logout: document.getElementById("logout"),
+  player: document.getElementById("video")
 };
 
 export default elements;

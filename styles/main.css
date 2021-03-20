@@ -74,6 +74,6 @@
 }
 
 .main {
-  height: 400px;
   border: royalblue solid 10px;
+  display: flex;
 }
