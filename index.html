@@ -17,36 +17,97 @@
       <!-- Nav Start -->
       <div id="nav" class="nav">
         <h1>GVP</h1>
+        <!-- Nav Elements Start -->
         <ul>
-          <li>
-            <span>Signup</span>
+          <!-- Signup Start -->
+
+          <li id="signup" class="nav-element">
+            <span id="signup-header" class="nav-element-header">Signup</span>
+            <form id="signup-form" class="nav-element-form">
+              <label id="signup-email-label" class="nav-element-email-label"
+                >Email:</label
+              >
+              <input
+                id="signup-email-input"
+                class="nav-element-email-input"
+                type="text"
+              />
+              <label
+                id="signup-password-label"
+                class="nav-element-password-label"
+                >Password:</label
+              >
+              <input
+                id="signup-password-input"
+                class="nav-element-password-input"
+                type="password"
+              />
+              <label
+                id="signup-password-label"
+                class="nav-element-password-label"
+                >Password:</label
+              >
+              <input
+                id="signup-password-confirmation-input"
+                class="nav-element-password-confirmation-input"
+                type="password"
+              />
+              <input
+                id="signup-sumbit"
+                class="nav-element-submit"
+                type="submit"
+              />
+            </form>
           </li>
-          <li id="login" class="login">
-            <span id="login-header" class="login-header">Login</span>
-            <form id="login-form" class="login-form">
-              <label id="login-email-label" class="login-email-label"
+          <!-- / Signup End -->
+
+          <!-- Login Start -->
+          <li id="login" class="nav-element">
+            <span id="login-header" class="nav-element-header">Login</span>
+            <form id="login-form" class="nav-element-form">
+              <label id="login-email-label" class="nav-element-email-label"
                 >Email:</label
               >
               <input
                 id="login-email-input"
-                class="login-email-input"
+                class="nav-element-email-input"
                 type="text"
               />
-              <label id="login-password-label" class="login-password-label"
+              <label
+                id="login-password-label"
+                class="nav-element-password-label"
                 >Password:</label
               >
               <input
                 id="login-password-input"
-                class="login-password-input"
-                type="text"
+                class="nav-element-password-input"
+                type="password"
+              />
+              <input
+                id="login-sumbit"
+                class="nav-element-submit"
+                type="submit"
               />
             </form>
           </li>
-          <li><span>Logout</span></li>
+          <!-- / Login End -->
+
+          <!-- Logout Start -->
+          <li id="logout" class="nav-element session">
+            <span>Logout</span>
+          </li>
+          <!-- / Logout End -->
         </ul>
+        <!-- / Nav Elements End -->
       </div>
       <!-- / Nav End -->
+
+      <!-- Main Start -->
+      <div id="main" class="main"></div>
+      <!-- / Main End -->
     </div>
     <!-- / Wrapper End -->
+
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>

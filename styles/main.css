@@ -15,10 +15,11 @@
   border: 10px solid salmon;
   display: flex;
   align-items: baseline;
+  transition: flex 0.3s ease-out;
 }
 
 .nav h1 {
-  font-size: 96px;
+  font-size: 108px;
   flex-grow: 10;
 }
 
@@ -30,24 +31,49 @@
 .nav li {
   padding: 12px;
   font-size: 60px;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
 }
 
 .nav li > form {
   align-items: center;
-  width: 100%;
 }
 
 .nav li > form label {
   font-size: 32px;
 }
 
-.login {
+.nav-element {
+  display: flex;
+}
+
+.nav-element:hover > * {
+  transition: width 0.5s ease;
+  width: 100%;
+  height: auto;
+}
+
+.nav-element > * {
   display: flex;
   flex-direction: column;
 }
 
-.login > * {
-  display: flex;
-  flex-direction: column;
+.nav-element-form {
+  height: 0;
+  width: 0;
+}
+.nav-element {
+  transition-duration: 1s;
+}
+.session {
+  display: none;
+}
+
+#logout:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.main {
+  height: 400px;
+  border: royalblue solid 10px;
 }
