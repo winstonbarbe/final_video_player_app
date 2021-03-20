@@ -138,17 +138,22 @@
         </div>
         <!-- Video PLayer End -->
 
+        <!-- Video Upload Start -->
         <div id="upload" class="upload">
-          <h4>Upload Videos</h4>
-          <form id="video-upload-form" class="video-upload-form">
-            <input type="file" />
+          <h4 id="upload-header" class="upload-header">Upload Videos</h4>
+          <form id="upload-form" class="upload-form">
+            <input id="upload-file" class="upload-file" type="file" />
+            <label>Name:</label>
+            <input type="text" />
+            <input id="upload-submit" type="submit" />
           </form>
         </div>
+        <!-- / Video Upload End -->
       </div>
       <!-- / Main End -->
     </div>
     <!-- / Wrapper End -->
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="./scripts/main.js"></script>
     <script type="module" src="./scripts/videoPlayer.js"></script>
   </body>
