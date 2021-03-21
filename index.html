@@ -107,7 +107,11 @@
       <div id="main" class="main">
         <!-- Video PLayer -->
         <div class="column player">
-          <video class="player__video viewer" src="652333414.mp4"></video>
+          <video
+            id="viewer"
+            class="player__video viewer"
+            src="652333414.mp4"
+          ></video>
 
           <div class="player__controls">
             <div class="progress">
@@ -160,9 +164,7 @@
           <div id="current-video" class="current-video">
             <h4>Playing:</h4>
             <p>Name: <span id="current-video-name">Example Video</span></p>
-            <p>Length: <span id="current-video-length">nil</span></p>
-            <p>Owner: <span id="current-video-owner">Unknown</span></p>
-            <!-- <p>Save: <span id="current-video-saved">False</span></p> -->
+            <p>Length: <span id="current-video-length">9:57</span></p>
           </div>
           <!-- Current Video Information End -->
         </div>
@@ -173,10 +175,11 @@
       <div id="library" class="library">
         <div id="library-header" class="library-header">
           <h4>Uploaded Videos</h4>
-          <p>
+          <p class="note">
             Note: To save videos for viewing repeatedly, visitors can make an
             account.
           </p>
+          <p class="note hide">Note: Added Videos will display here.</p>
         </div>
         <ul id="library-list" class="library-list">
           <li>No videos yet uploading</li>

@@ -122,7 +122,7 @@
 
 .library {
   border: 10px orange solid;
-  /* overflow: scroll; */
+  overflow-x: auto;
 }
 
 .library-header {
@@ -142,13 +142,24 @@
 
 .library-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: right;
   flex-wrap: wrap;
 }
 .library-list > li {
-  width: 30%;
+  width: 18%;
+  position: relative;
 }
 
 .library-list li > video {
   margin: 20px;
+  width: 80%;
+  cursor: pointer;
+}
+
+.selected {
+  border: red 2px solid;
+}
+
+.hide {
+  display: none;
 }

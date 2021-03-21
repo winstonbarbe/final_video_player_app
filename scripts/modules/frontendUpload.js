@@ -1,4 +1,5 @@
 import elements from "../elements.js";
+import populateLibrary from "./populateLibrary.js";
 
 function frontendUpload(e) {
   e.preventDefault();
@@ -20,12 +21,15 @@ function frontendUpload(e) {
     },
     data: formData
   }).then(res => {
+    console.log(res.data);
     const newVideo = { url: res.data.secure_url, name: name, length: res.data.duration };
-    console.log(newVideo);
+    
     const videos = elements.storedVideos.map(video => video);
     videos.push(newVideo);
     localStorage.setItem("videos", JSON.stringify(videos.reverse()));
+    populateLibrary(videos);
     console.log("Upload Complete");
+    this.reset();
   }).catch(err => {
     console.log(err);
   });

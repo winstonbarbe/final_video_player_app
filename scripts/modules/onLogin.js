@@ -1,5 +1,6 @@
 import elements from "../elements.js";
 import sessionChange from "./sessionChange.js";
+import populateLibrary from "./populateLibrary.js";
 
 function onLogin(e) {
   e.preventDefault();
@@ -23,9 +24,11 @@ function onLogin(e) {
     })
     .then(data => {
       console.log(data);
-      // const links = data.user.videos.map(video => video.url);
-      localStorage.setItem("jwt", data.jwt);
+      const videos = data.user.videos;
       sessionChange();
+      localStorage.setItem("jwt", data.jwt);
+      localStorage.setItem("videos", JSON.stringify(data.user.videos));
+      populateLibrary(videos);
     })
     .catch(err => console.log(err.statusText));
   this.reset();
