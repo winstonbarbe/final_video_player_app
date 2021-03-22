@@ -1,0 +1,48 @@
+:root {
+  --blur: 0px;
+  --brightness: 100%;
+  --contrast: 100%;
+  --grayscale: 0%;
+  --hue-rotate: 0deg;
+  --invert: 0%;
+  --opacity: 100%;
+  --saturate: 100%;
+  --sepia: 0%;
+  --color1: #46736a;
+  --color1a: #46736a;
+  --color2: #463637;
+  --color3: #bab8b650;
+  --color4: #a16e29;
+  --color5: #db4c40;
+}
+
+.filtered {
+  filter: blur(var(--blur)) brightness(var(--brightness))
+    contrast(var(--contrast)) grayscale(var(--grayscale))
+    hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity))
+    saturate(var(--saturate)) sepia(var(--sepia));
+}
+
+.grayscale {
+  filter: grayscale(var(--grayscale));
+}
+
+.hue-rotate {
+  filter: hue-rotate(var(--hue-rotate));
+}
+
+.invert {
+  filter: invert(var(--invert));
+}
+
+.opacity {
+  filter: opacity(var(--opacity));
+}
+
+.saturate {
+  filter: saturate(var(--saturate));
+}
+
+.sepia {
+  filter: sepia(var(--sepia));
+}

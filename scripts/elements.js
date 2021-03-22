@@ -1,4 +1,4 @@
-const elements = {
+let elements = {
   nav: document.getElementById("nav"),
   navElements: document.querySelectorAll(".nav-element"),
   signupForm: document.getElementById("signup-form"),
@@ -11,8 +11,11 @@ const elements = {
   libraryList: document.getElementById("library-list"),
   libraryItems: document.querySelectorAll(".library-list li"),
   viewer: document.getElementById("viewer"),
-  currentVideo: document.getElementById("current-video")
-
+  currentVideo: document.getElementById("current-video"),
+  filterRangeItems: document.querySelectorAll(".filter-range"),
+  filterSelect: document.getElementById("filter-select"),
+  filterRangeInputs: document.querySelectorAll("#range-list input"),
+  clear: document.getElementById("clear")
 };
 
 export default elements;

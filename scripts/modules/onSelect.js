@@ -6,6 +6,7 @@ function onSelect(e) {
   e.preventDefault();
 
   const index = parseInt(this.querySelector("video").dataset.index);
+  console.log(index);
   const videos = getStored();
   const video = videos[index];
   const previousSelection = document.querySelector(".selected");

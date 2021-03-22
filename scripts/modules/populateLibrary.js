@@ -15,6 +15,7 @@ function populateLibrary(videos) {
     `;
   }).join("");
   elements.libraryItems = document.querySelectorAll(".library-list li");
+  console.log(elements.libraryItems);
 }
 
 export default populateLibrary;

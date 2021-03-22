@@ -9,6 +9,8 @@
       href="https://images.vexels.com/media/users/3/195529/isolated/preview/e63fe146d7aafcf9e906e6a404a9029e-cool-vhs-tape-by-vexels.png"
     />
     <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/filters.css" />
+
     <link rel="stylesheet" href="./styles/video-player.css" />
     <title>Final Video Player</title>
   </head>
@@ -109,7 +111,7 @@
         <div class="column player">
           <video
             id="viewer"
-            class="player__video viewer"
+            class="player__video viewer filtered"
             src="652333414.mp4"
           ></video>
 
@@ -119,6 +121,7 @@
             </div>
             <button class="player__button toggle" title="Toggle Play">►</button>
             <input
+              class="video-range"
               type="range"
               name="volume"
               class="player__slider"
@@ -128,6 +131,7 @@
               value="1"
             />
             <input
+              class="video-range"
               type="range"
               name="playbackRate"
               class="player__slider"
@@ -167,6 +171,177 @@
             <p>Length: <span id="current-video-length">9:57</span></p>
           </div>
           <!-- Current Video Information End -->
+          <br />
+          <hr />
+          <br />
+
+          <div id="filtering" class="filtering">
+            <label for="filter-select">Fitler Type: </label>
+            <select name="filters" id="filter-select">
+              <option id="no-filter" value="">None</option>
+              <option id="blur" value="blur">Blur</option>
+              <option id="brightness" value="brightness">Brightness</option>
+              <option id="contrast" value="contrast">Contrast</option>
+              <option data-sizing="%" id="grayscale" value="grayscale">
+                Grayscale
+              </option>
+              <option id="hue-rotate" value="hue-rotate">Hue Rotate</option>
+              <option id="invert" value="invert">Invert</option>
+              <option id="opacity" value="opacity">Opacity</option>
+              <option id="saturate" value="saturate">Saturate</option>
+              <option id="sepia" value="sepia">Sepia</option>
+            </select>
+            <br />
+            <div id="filter-range-type">
+              <ul id="range-list">
+                <li
+                  id="blur-range"
+                  class="not-selected filter-range"
+                  data-name="blur"
+                >
+                  <label for="range-select">Blur: </label>
+                  <input
+                    id="blur-input"
+                    data-name="blur"
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    data-sizing="px"
+                  />
+                </li>
+                <li
+                  id="brightness-range"
+                  class="not-selected filter-range"
+                  data-name="brightness"
+                >
+                  <label for="range-select">Brightness: </label>
+                  <input
+                    id="brightness-input"
+                    type="range"
+                    min="0"
+                    max="200"
+                    value="100"
+                    data-sizing="%"
+                    data-name="brightness"
+                  />
+                </li>
+                <li
+                  id="contrast-range"
+                  class="not-selected filter-range"
+                  data-name="contrast"
+                >
+                  <label for="range-select">Contrast: </label>
+                  <input
+                    id="contrast-input"
+                    data-name="contrast"
+                    type="range"
+                    min="0%"
+                    max="200"
+                    value="100"
+                    data-sizing="%"
+                  />
+                </li>
+                <li
+                  id="grayscale-range"
+                  class="not-selected filter-range"
+                  data-name="grayscale"
+                >
+                  <label for="range-select">Grayscale: </label>
+                  <input
+                    id="grayscale-input"
+                    data-name="grayscale"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    data-sizing="%"
+                  />
+                </li>
+                <li
+                  id="hue-rotate-range"
+                  class="not-selected filter-range"
+                  data-name="hue-rotate"
+                >
+                  <label for="range-select">Hue-rotate: </label>
+                  <input
+                    id="hue-rotate-input"
+                    data-name="hue-rotate"
+                    type="range"
+                    min="0"
+                    max="360"
+                    value="0"
+                    data-sizing="deg"
+                  />
+                </li>
+                <li
+                  id="invert-range"
+                  class="not-selected filter-range"
+                  data-name="invert"
+                >
+                  <label for="range-select">Invert: </label>
+                  <input
+                    id="invert-input"
+                    data-name="invert"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    data-sizing="%"
+                  />
+                </li>
+                <li
+                  id="opacity-range"
+                  class="not-selected filter-range"
+                  data-name="opacity"
+                >
+                  <label for="range-select">opacity: </label>
+                  <input
+                    id="opacity-input"
+                    data-name="opacity"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="100"
+                    data-sizing="%"
+                  />
+                </li>
+                <li
+                  id="saturate-range"
+                  class="not-selected filter-range"
+                  data-name="saturate"
+                >
+                  <label for="range-select">saturate: </label>
+                  <input
+                    id="saturate-input"
+                    data-name="saturate"
+                    type="range"
+                    min="0"
+                    max="1000"
+                    value="100"
+                    data-sizing="%"
+                  />
+                </li>
+                <li
+                  id="sepia-range"
+                  class="not-selected filter-range"
+                  data-name="sepia"
+                >
+                  <label for="range-select">sepia: </label>
+                  <input
+                    id="sepia-input"
+                    data-name="sepia"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    data-sizing="%"
+                  />
+                </li>
+              </ul>
+            </div>
+            <button id="clear">Filter On/Off</button>
+          </div>
         </div>
         <!-- / Video Upload End -->
       </div>
@@ -174,7 +349,7 @@
       <!-- Video Library Start -->
       <div id="library" class="library">
         <div id="library-header" class="library-header">
-          <h4>Uploaded Videos</h4>
+          <h4>Video Library</h4>
           <p class="note">
             Note: To save videos for viewing repeatedly, visitors can make an
             account.

@@ -28,7 +28,9 @@ function onLogin(e) {
       sessionChange();
       localStorage.setItem("jwt", data.jwt);
       localStorage.setItem("videos", JSON.stringify(data.user.videos));
+  
       populateLibrary(videos);
+      location.reload();
     })
     .catch(err => console.log(err.statusText));
   this.reset();
