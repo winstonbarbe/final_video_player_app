@@ -1,7 +1,31 @@
+/* @font-face {
+  font-family: CheeeDemo-Oldskool;
+  src: url("./fonts/CheeeDemo-Oldskool.otf") format("opentype");
+}
+@font-face {
+  font-family: Obviously;
+  src: url("./fonts/ObviouslyDemo-NarrowSuper.otf") format("opentype");
+}
+@font-face {
+  font-family: Digestive;
+  src: url("./fonts/DigestiveDemo-One.otf") format("opentype");
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100;400;600&display=swap");
+
+:root {
+  --color1: aliceblue;
+  /* --color1a: #46736a; */
+  /* --color2: #463637; */
+  /* --color3: #bab8b650; */
+  --color4: tomato;
+  /* --color5: #db4c40; */
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: monospace;
+  font-family: "Antonio", monospace;
   box-sizing: border-box;
   overflow: scroll;
 }
@@ -31,8 +55,11 @@
 }
 
 .nav h1 {
-  font-size: 108px;
+  font-size: 124px;
   flex-grow: 10;
+  font-family: "Antonio";
+  color: var(--color1);
+  text-shadow: 6px 6px 2px black;
 }
 
 .nav ul {
@@ -137,7 +164,7 @@
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  background-color: var(--color4);
+  /* background-color: var(--color4); */
 }
 
 .library-header > h4 {
@@ -213,4 +240,22 @@
 
 .not-selected {
   display: none;
+}
+
+.footer > ul {
+  padding: 2vh;
+  display: flex;
+  justify-content: space-around;
+}
+.footer > ul > li {
+  text-shadow: 0px 0px 1px white;
+  font-size: 16px;
+}
+
+.footer-link > a {
+  text-decoration: none;
+  color: black;
+}
+.footer-link:hover {
+  transform: scale(1.2);
 }
