@@ -31,7 +31,6 @@ html {
 .nav {
   background-color: var(--secondary-color);
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
   border-radius: 0 0 25px 25px;
@@ -41,17 +40,10 @@ html {
 .nav > h1 {
   flex-grow: 10;
   flex-shrink: 1;
-  font-size: 19vw;
+  font-size: 16vw;
   color: var(--primary-color);
   text-shadow: 1vw 1vw 0.33vw var(--other-color);
   padding: 10px;
-}
-
-@media screen and (min-width: 800px) {
-  .nav > h1 {
-    font-size: 9vw;
-    text-shadow: 0.4vw 0.4vw 0.16vw var(--other-color);
-  }
 }
 
 .nav > ul {
@@ -63,6 +55,42 @@ html {
   justify-content: space-around;
   font-size: 2.5em;
   padding-right: 2vw;
+}
+
+.nav > ul > .session-controller > span:hover,
+.menu-button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.session-controller {
+  display: none;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 800px) {
+  .nav > h1 {
+    font-size: 9vw;
+    text-shadow: 0.4vw 0.4vw 0.16vw var(--other-color);
+  }
+  .nav > ul > .session-controller {
+    display: flex;
+  }
+  .menu-button {
+    display: none;
+  }
+}
+
+.logout-no-session {
+  display: none;
+}
+
+.session-options-show {
+  display: flex;
+}
+
+.session-options-nav {
+  flex-wrap: wrap;
 }
 
 /* Nav Section End */
@@ -247,11 +275,11 @@ html {
   justify-content: space-evenly;
   margin: 2vh;
 }
-/* @media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .sidebar > * {
     display: none;
   }
-} */
+}
 
 .sidebar > * > hr {
   width: 95%;
@@ -266,3 +294,95 @@ html {
 }
 
 /* Sidebar end */
+
+/* Session Forms */
+
+/* Full-width input fields */
+.signup-form *,
+.login-form * {
+  font-size: 0.75em;
+  align-items: center;
+}
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.signup-form input[type="text"]:focus,
+.signup-form input[type="password"]:focus,
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.signup-form hr,
+.login-form hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+.signup-form button,
+.login-form button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.signup-form button:hover,
+.login-form button:hover {
+  opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+.signup-form .cancelbtn,
+.login-form .cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.signup-form .cancelbtn,
+.signup-form .signupbtn,
+.login-form .cancelbtn,
+.login-form .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.signup-form .container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.signup-form .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .signup-form .cancelbtn,
+  .signup-form .signupbtn {
+    width: 100%;
+  }
+}
+
+.not-clicked {
+  display: none;
+}

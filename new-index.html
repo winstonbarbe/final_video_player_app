@@ -22,9 +22,82 @@
         <h1>Video Player</h1>
 
         <ul>
-          <li class="session-controller">Signup</li>
-          <li class="session-controller">Login</li>
-          <li class="menu-button"><i class="fas fa-bars"></i></li>
+          <li class="logout-no-session"><span>Logout</span></li>
+          <li class="session-controller">
+            <span id="signup-reveal">Signup</span>
+            <form
+              action="action_page"
+              id="signup-form"
+              class="not-clicked signup-form"
+            >
+              <div class="container">
+                <label for="email"><b>Email</b></label>
+                <br />
+                <input
+                  type="text"
+                  placeholder="Enter Email"
+                  name="email"
+                  required
+                />
+                <br />
+
+                <label for="psw"><b>Password</b></label>
+                <br />
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  name="psw"
+                  required
+                />
+                <br />
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <br />
+                <input
+                  type="password"
+                  placeholder="Repeat Password"
+                  name="psw-repeat"
+                  required
+                />
+
+                <div class="clearfix">
+                  <button type="button" class="cancelbtn">Cancel</button>
+                  <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </li>
+          <li class="session-controller">
+            <span>Login</span>
+            <form action="action_page" class="not-clicked login-form">
+              <div class="container">
+                <label for="email"><b>Email</b></label>
+                <br />
+                <input
+                  type="text"
+                  placeholder="Enter Email"
+                  name="email"
+                  required
+                />
+                <br />
+
+                <label for="psw"><b>Password</b></label>
+                <br />
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  name="psw"
+                  required
+                />
+                <br />
+                <div class="clearfix">
+                  <button type="button" class="cancelbtn">Cancel</button>
+                  <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </li>
+          <li><i class="fas fa-bars menu-button"></i></li>
         </ul>
       </div>
       <!-- / Nav End -->
@@ -72,7 +145,14 @@
               <li>Length: 22:13</li>
             </ul>
           </div>
-
+          <div class="filters">
+            <hr />
+            <h4>Video Filters</h4>
+            <form>
+              <input type="range" />
+              <button type="submit">submit</button>
+            </form>
+          </div>
           <div class="upload">
             <hr />
             <h4>Upload Video</h4>
@@ -83,18 +163,11 @@
               <button type="submit">Submit</button>
             </form>
           </div>
-
-          <div class="filters">
-            <hr />
-            <h4>Now Playing</h4>
-            <form>
-              <input type="range" />
-              <button type="submit">submit</button>
-            </form>
-          </div>
         </div>
       </div>
       <!-- / Main End -->
     </div>
+    <script type="module" src="./new-scripts/main.js"></script>
+    <script type="module" src="./scripts/videoPlayer.js"></script>
   </body>
 </html>
