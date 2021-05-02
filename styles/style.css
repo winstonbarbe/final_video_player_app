@@ -24,24 +24,23 @@ html {
   font-family: var(--main-font), monospace;
   background-color: var(--primary-color);
   min-height: 100vh;
-  /* border: aqua solid 4px; */
 }
 /* Wrapper End */
 
 /* Nav Section Start */
 .nav {
   background-color: var(--secondary-color);
-  /* border: 4px solid red; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 1px 12px var(--other-color);
 }
 
 .nav > h1 {
   flex-grow: 10;
   flex-shrink: 1;
-  /* border: 4px solid yellow; */
   font-size: 19vw;
   color: var(--primary-color);
   text-shadow: 1vw 1vw 0.33vw var(--other-color);
@@ -51,12 +50,11 @@ html {
 @media screen and (min-width: 800px) {
   .nav > h1 {
     font-size: 9vw;
-    text-shadow: 0.5vw 0.5vw 0.33vw var(--other-color);
+    text-shadow: 0.4vw 0.4vw 0.16vw var(--other-color);
   }
 }
 
 .nav > ul {
-  /* border: 4px solid blue; */
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -64,13 +62,14 @@ html {
   flex-shrink: 10;
   justify-content: space-around;
   font-size: 2.5em;
+  padding-right: 2vw;
 }
 
 /* Nav Section End */
 
 /* Main Section Start */
 .main {
-  margin: 2vw;
+  margin: 3vw 2vw;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -78,7 +77,6 @@ html {
 
 .upload {
   min-width: 30%;
-  /* border: orange solid 4px; */
   flex: 1 5 auto;
 }
 /* Main Section End */
@@ -87,12 +85,13 @@ html {
 
 .player {
   max-width: 900px;
-  border: 5px solid rgba(0, 0, 0, 0.2);
+
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   position: relative;
   font-size: 0;
   overflow: hidden;
   flex: 5 1 auto;
+  box-shadow: 0 1px 6px var(--other-color);
 }
 
 /* This css is only applied when fullscreen is active. */
@@ -174,18 +173,18 @@ html {
 
 /* unholy css to style input type="range" */
 
-input[type="range"] {
+.video-range {
   -webkit-appearance: none;
   background: transparent;
   width: 100%;
   margin: 0 5px;
 }
 
-input[type="range"]:focus {
+.video-range:focus {
   outline: none;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+.video-range::-webkit-slider-runnable-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
@@ -195,7 +194,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   border: 0.2px solid rgba(1, 1, 1, 0);
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.video-range::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50px;
@@ -206,11 +205,11 @@ input[type="range"]::-webkit-slider-thumb {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
-input[type="range"]:focus::-webkit-slider-runnable-track {
+.video-range:focus::-webkit-slider-runnable-track {
   background: #bada55;
 }
 
-input[type="range"]::-moz-range-track {
+.video-range::-moz-range-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
@@ -220,7 +219,7 @@ input[type="range"]::-moz-range-track {
   border: 0.2px solid rgba(1, 1, 1, 0);
 }
 
-input[type="range"]::-moz-range-thumb {
+.video-range::-moz-range-thumb {
   box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
   height: 15px;
   width: 15px;
@@ -230,3 +229,40 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* Video Player Section End */
+
+/* Sidebar start */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar > * {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2vh;
+}
+/* @media screen and (max-width: 800px) {
+  .sidebar > * {
+    display: none;
+  }
+} */
+
+.sidebar > * > hr {
+  width: 95%;
+}
+
+.sidebar > * > h4 {
+  font-size: 2em;
+}
+
+.sidebar > * > ul {
+  list-style-type: none;
+}
+
+/* Sidebar end */
