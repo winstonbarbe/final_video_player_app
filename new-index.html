@@ -22,8 +22,8 @@
         <h1>Video Player</h1>
 
         <ul>
-          <li class="logout-no-session"><span>Logout</span></li>
-          <li class="session-controller">
+          <li class="logout hide-no-session"><span>Logout</span></li>
+          <li class="session-controller show-no-session">
             <span id="signup-reveal">Signup</span>
             <form
               action="action_page"
@@ -67,9 +67,13 @@
               </div>
             </form>
           </li>
-          <li class="session-controller">
-            <span>Login</span>
-            <form action="action_page" class="not-clicked login-form">
+          <li class="session-controller show-no-session">
+            <span id="login-reveal">Login</span>
+            <form
+              action="action_page"
+              id="login-form"
+              class="not-clicked login-form"
+            >
               <div class="container">
                 <label for="email"><b>Email</b></label>
                 <br />
@@ -92,12 +96,12 @@
                 <br />
                 <div class="clearfix">
                   <button type="button" class="cancelbtn">Cancel</button>
-                  <button type="submit" class="signupbtn">Sign Up</button>
+                  <button type="submit" class="signupbtn">Login</button>
                 </div>
               </div>
             </form>
           </li>
-          <li><i class="fas fa-bars menu-button"></i></li>
+          <li id="menu-toggle"><i class="fas fa-bars menu-button"></i></li>
         </ul>
       </div>
       <!-- / Nav End -->

@@ -58,8 +58,9 @@ html {
 }
 
 .nav > ul > .session-controller > span:hover,
-.menu-button:hover {
-  transform: scale(1.2);
+.menu-button:hover,
+.logout:hover {
+  text-shadow: 0px 0px 12px var(--primary-color);
   cursor: pointer;
 }
 
@@ -72,9 +73,6 @@ html {
   .nav > h1 {
     font-size: 9vw;
     text-shadow: 0.4vw 0.4vw 0.16vw var(--other-color);
-  }
-  .nav > ul > .session-controller {
-    display: flex;
   }
   .menu-button {
     display: none;
@@ -93,6 +91,9 @@ html {
   flex-wrap: wrap;
 }
 
+.inactive {
+  display: none;
+}
 /* Nav Section End */
 
 /* Main Section Start */
@@ -275,11 +276,11 @@ html {
   justify-content: space-evenly;
   margin: 2vh;
 }
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .sidebar > * {
     display: none;
   }
-}
+} */
 
 .sidebar > * > hr {
   width: 95%;
