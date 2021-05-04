@@ -1,6 +1,6 @@
 // Nav Stuff
 
-const showNoSessions = document.querySelectorAll(".show-no-sessions");
+const showNoSessions = document.querySelectorAll(".session-controller");
 const menuToggle = document.getElementById("menu-toggle");
 const nav = document.querySelector(".nav");
 const logout = document.querySelector(".logout");
@@ -47,12 +47,9 @@ function handleLogin(e) {
   e.preventDefault();
   console.log(e);
   localStorage.setItem("jwt", "jwt");
-  this.reset();
   loginForm.classList.toggle("not-clicked");
-  showNoSessions.forEach(controller => {
-    controller.classList.replace("show-no-session", "hide-on-session");
-  });
-  logout.classList.replace("hide-no-session", "show-on-session");
+  this.reset();
+  isActiveSession();
   console.log(logout);
 }
 
@@ -63,11 +60,24 @@ loginForm.addEventListener("submit", handleLogin);
 // Logout
 
 function handleLogout() {
-  showNoSessions.forEach(controller => {
-    logout.classList.add("logout-no-session");
-    controller.classList.replace("inactive", "session-controller");
-  });
   localStorage.clear();
+  isActiveSession();
 }
 logout.addEventListener("click", handleLogout);
 
+
+const isActiveSession = () => {
+  localStorage.getItem("jwt") ? activeSession() : inactiveSession();
+};
+const inactiveSession = () => {
+  document.querySelector(".logout").classList.add("inactive");
+  document.querySelectorAll(".session-controller").forEach(controller =>      controller.classList.remove("inactive")
+  );
+};
+const activeSession = () => {
+  document.querySelector(".logout").classList.remove("inactive");
+  document.querySelectorAll(".session-controller").forEach(controller => controller.classList.add("inactive")
+  );
+};
+
+isActiveSession();

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/nav.css" />
     <script
       defer
       src="./node_modules/@fortawesome/fontawesome-free/js/all.js"
@@ -13,6 +14,7 @@
       rel="text/html"
       href="./node_modules/@fortawesome/fontawesome-free/cs/all.css"
     />
+
     <title>New Index</title>
   </head>
   <body>
@@ -22,8 +24,8 @@
         <h1>Video Player</h1>
 
         <ul>
-          <li class="logout hide-no-session"><span>Logout</span></li>
-          <li class="session-controller show-no-session">
+          <li class="logout"><span>Logout</span></li>
+          <li class="session-controller">
             <span id="signup-reveal">Signup</span>
             <form
               action="action_page"
@@ -67,7 +69,7 @@
               </div>
             </form>
           </li>
-          <li class="session-controller show-no-session">
+          <li class="session-controller">
             <span id="login-reveal">Login</span>
             <form
               action="action_page"
